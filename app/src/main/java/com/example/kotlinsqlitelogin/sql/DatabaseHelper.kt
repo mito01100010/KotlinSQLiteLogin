@@ -52,9 +52,7 @@ class DatabaseHelper(context: Context?) :
         val cursorCount = cursor.count
         cursor.close()
         db.close()
-        return if (cursorCount > 0) {
-            true
-        } else false
+        return cursorCount > 0
     }
 
     fun checkUser(email: String, password: String): Boolean {
@@ -76,9 +74,7 @@ class DatabaseHelper(context: Context?) :
         val cursorCount = cursor.count
         cursor.close()
         db.close()
-        return if (cursorCount > 0) {
-            true
-        } else false
+        return cursorCount > 0
     }
 
     companion object {
